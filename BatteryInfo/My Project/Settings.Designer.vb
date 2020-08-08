@@ -53,6 +53,42 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://ADRESA/program/CISLO"&Global.Microsoft.VisualBasic.ChrW(13))>  _
+        Public Property wifiZasuvkaON() As String
+            Get
+                Return CType(Me("wifiZasuvkaON"),String)
+            End Get
+            Set
+                Me("wifiZasuvkaON") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://ADRESA/program/CISLO"&Global.Microsoft.VisualBasic.ChrW(13))>  _
+        Public Property wifiZasuvkaOFF() As String
+            Get
+                Return CType(Me("wifiZasuvkaOFF"),String)
+            End Get
+            Set
+                Me("wifiZasuvkaOFF") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.6.60/data.txt")>  _
+        Public Property ethernetTeplomerURL() As String
+            Get
+                Return CType(Me("ethernetTeplomerURL"),String)
+            End Get
+            Set
+                Me("ethernetTeplomerURL") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

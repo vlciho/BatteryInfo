@@ -6,6 +6,10 @@ Imports System.Windows.Forms
 
 Module Module1
 
+    Dim proved As String
+    Dim webClient As New System.Net.WebClient
+    Dim ps As PowerStatus
+
     Sub Main()
 
         aTimer.AutoReset = True
@@ -20,17 +24,22 @@ Module Module1
 
     Public Sub BatteryInfo(ByVal sender As Object, ByVal e As System.Timers.ElapsedEventArgs)
 
-        Dim ps As PowerStatus = SystemInformation.PowerStatus
+        ps = SystemInformation.PowerStatus
         Dim plf As Single = ps.BatteryLifePercent
         Dim output As String = (plf * 100).ToString & "%"
-        Dim webClient As New System.Net.WebClient
         webClient.Encoding = System.Text.Encoding.UTF8
 
         'Console.WriteLine("Battery charge status: Charging")
         'Console.WriteLine("Battery level: " & output)
 
+        'Vypnout zásuvku
+        If output >= 100 Then proved = My.Settings.wifiZasuvkaOFF.ToString
+
+        'Zapnout zásuvku
+        If output <= 15 Then proved = My.Settings.wifiZasuvkaOFF.ToString
+
         Try
-            Dim result As String = webClient.DownloadString("http://192.168.6.60/data.txt")
+            Dim result As String = webClient.DownloadString(proved)
 
             Console.WriteLine(result)
             'MsgBox(result)
