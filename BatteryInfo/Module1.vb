@@ -26,17 +26,17 @@ Module Module1
 
         ps = SystemInformation.PowerStatus
         Dim plf As Single = ps.BatteryLifePercent
-        Dim output As String = (plf * 100).ToString & "%"
+        Dim nabito As Integer = (plf * 100)
         webClient.Encoding = System.Text.Encoding.UTF8
 
         'Console.WriteLine("Battery charge status: Charging")
         'Console.WriteLine("Battery level: " & output)
 
         'Vypnout zásuvku
-        If output >= 100 Then proved = My.Settings.wifiZasuvkaOFF.ToString
+        If nabito >= 100 Then proved = My.Settings.wifiZasuvkaOFF.ToString
 
         'Zapnout zásuvku
-        If output <= 15 Then proved = My.Settings.wifiZasuvkaOFF.ToString
+        If nabito <= 15 Then proved = My.Settings.wifiZasuvkaOFF.ToString
 
         Try
             Dim result As String = webClient.DownloadString(proved)
