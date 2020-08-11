@@ -3,13 +3,25 @@
   <Profiles />
   <Settings>
     <Setting Name="wifiZasuvkaON" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://ADRESA/program/CISLO</Value>
+      <Value Profile="(Default)">http://192.168.6.61/relay/1/on</Value>
     </Setting>
     <Setting Name="wifiZasuvkaOFF" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://ADRESA/program/CISLO</Value>
+      <Value Profile="(Default)">http://192.168.6.61/relay/1/off</Value>
     </Setting>
     <Setting Name="ethernetTeplomerURL" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://192.168.6.60/data.txt</Value>
+    </Setting>
+    <Setting Name="dolniMez" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="horniMez" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">99</Value>
+    </Setting>
+    <Setting Name="perioda" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120000</Value>
+    </Setting>
+    <Setting Name="debug" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

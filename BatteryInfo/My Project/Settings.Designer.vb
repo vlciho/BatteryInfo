@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://ADRESA/program/CISLO"&Global.Microsoft.VisualBasic.ChrW(13))>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.6.61/relay/1/on")>  _
         Public Property wifiZasuvkaON() As String
             Get
                 Return CType(Me("wifiZasuvkaON"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://ADRESA/program/CISLO"&Global.Microsoft.VisualBasic.ChrW(13))>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://192.168.6.61/relay/1/off")>  _
         Public Property wifiZasuvkaOFF() As String
             Get
                 Return CType(Me("wifiZasuvkaOFF"),String)
@@ -87,6 +87,54 @@ Namespace My
             End Get
             Set
                 Me("ethernetTeplomerURL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
+        Public Property dolniMez() As Integer
+            Get
+                Return CType(Me("dolniMez"),Integer)
+            End Get
+            Set
+                Me("dolniMez") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("99")>  _
+        Public Property horniMez() As Integer
+            Get
+                Return CType(Me("horniMez"),Integer)
+            End Get
+            Set
+                Me("horniMez") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("120000")>  _
+        Public Property perioda() As Integer
+            Get
+                Return CType(Me("perioda"),Integer)
+            End Get
+            Set
+                Me("perioda") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property debug() As Boolean
+            Get
+                Return CType(Me("debug"),Boolean)
+            End Get
+            Set
+                Me("debug") = value
             End Set
         End Property
     End Class
