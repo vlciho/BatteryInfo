@@ -15,6 +15,15 @@ Module Module1
 
         'Logger.LogInfo("Starting PocasiRT " + Application.ProductVersion.ToString)
         strDebug = My.Settings.debug
+        proved = My.Settings.wifiZasuvkaON.ToString
+
+        Try
+            Dim result As String = webClient.DownloadString(proved)
+        Catch ex As Exception
+            If strDebug Then Console.WriteLine(ex.Message)
+        End Try
+
+        proved = ""
 
         aTimer.AutoReset = True
         aTimer.Interval = My.Settings.perioda       '2 minuty
@@ -46,8 +55,6 @@ Module Module1
 
         'Zapnout zásuvku
         If nabito <= dolniMez Then proved = My.Settings.wifiZasuvkaON.ToString
-
-        If (nabito > dolniMez) And (nabito < horniMez) Then proved = My.Settings.wifiZasuvkaON.ToString
 
         Try
             If strDebug Then MsgBox(nabito.ToString + ";" + proved.ToString)
