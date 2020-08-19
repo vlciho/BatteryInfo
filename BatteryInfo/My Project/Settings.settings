@@ -12,13 +12,13 @@
       <Value Profile="(Default)">http://192.168.6.60/data.txt</Value>
     </Setting>
     <Setting Name="dolniMez" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">15</Value>
+      <Value Profile="(Default)">32</Value>
     </Setting>
     <Setting Name="horniMez" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">99</Value>
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="perioda" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">120000</Value>
+      <Value Profile="(Default)">10000</Value>
     </Setting>
     <Setting Name="debug" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
